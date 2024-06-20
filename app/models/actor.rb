@@ -13,8 +13,10 @@
 class Actor < ApplicationRecord
   validates(:name, presence: true)
 
-  belongs_to(:)
+  has_many(:characters, class_name:"Character", foreign_key:"actor_id" )
+  has_many(:filmography, class_name:"Character", foreign_key:"movie_id" )
 
+=begin
   def characters
     key = self.id
 
@@ -22,6 +24,7 @@ class Actor < ApplicationRecord
 
     return the_many
   end
+
 
   def filmography
     the_many = Array.new
@@ -34,4 +37,5 @@ class Actor < ApplicationRecord
 
     return the_many
   end
+=end
 end
