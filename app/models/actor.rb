@@ -13,6 +13,8 @@
 class Actor < ApplicationRecord
   validates(:name, presence: true)
 
+  belongs_to(:)
+
   def characters
     key = self.id
 
